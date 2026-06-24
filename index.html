@@ -40,11 +40,81 @@
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--color-bg);
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
   color: var(--color-text);
 }
 
 .hidden { display: none !important; }
+
+/* ---------- Fundo cósmico (estrelas) ---------- */
+.cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 8s infinite linear;
+}
+
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
+}
+
+.shooting-star:nth-child(2) { top: 20%; left: -100px; animation-delay: 0s; }
+.shooting-star:nth-child(3) { top: 35%; left: -100px; animation-delay: 1.4s; }
+.shooting-star:nth-child(4) { top: 50%; left: -100px; animation-delay: 2.8s; }
+.shooting-star:nth-child(5) { top: 65%; left: -100px; animation-delay: 0.7s; }
+.shooting-star:nth-child(6) { top: 12%; left: -100px; animation-delay: 2.1s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes shoot {
+  0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; }
+  100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; }
+}
 
 .icon {
   width: 18px;
@@ -72,35 +142,9 @@ input, select {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: transparent;
   padding: 16px;
   position: relative;
-  overflow: hidden;
-}
-
-.login-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: .55;
-  animation: blobFloat 22s ease-in-out infinite;
-  will-change: transform;
-}
-.blob-1 { width: 380px; height: 380px; background: #6b6b73; top: -120px; left: -100px; }
-.blob-2 { width: 320px; height: 320px; background: #000000; bottom: -110px; right: -90px; animation-duration: 26s; animation-delay: -6s; }
-.blob-3 { width: 260px; height: 260px; background: #c7c7cd; top: 45%; left: 62%; animation-duration: 19s; animation-delay: -3s; }
-
-@keyframes blobFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.12); }
-  66% { transform: translate(-30px, 25px) scale(0.93); }
 }
 
 .login-card {
@@ -138,7 +182,7 @@ input, select {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .blob { animation: none; }
+  .stars, .stars::after, .shooting-star { animation: none; }
   .login-card { animation: none; }
 }
 
@@ -302,7 +346,9 @@ input, select {
 #sidebar {
   width: 230px;
   flex-shrink: 0;
-  background: var(--gradient-sidebar);
+  background: linear-gradient(180deg, rgba(39,39,42,.78) 0%, rgba(0,0,0,.85) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -397,7 +443,8 @@ section h2 {
   gap: 10px;
   margin: 0 0 20px;
   font-size: 20px;
-  color: var(--color-primary-dark);
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
 }
 
 .section-fade { animation: sectionFade .35s ease; }
@@ -407,7 +454,7 @@ section h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .section-fade, .login-card, .card, .blob { animation: none !important; transition: none !important; }
+  .section-fade, .login-card, .card, .stars, .stars::after, .shooting-star { animation: none !important; transition: none !important; }
 }
 
 /* ---------- Cards ---------- */
@@ -605,7 +652,9 @@ tbody tr:last-child td { border-bottom: none; }
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--gradient-sidebar);
+  background: linear-gradient(180deg, rgba(39,39,42,.85) 0%, rgba(0,0,0,.9) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
   align-items: center;
   justify-content: space-between;
@@ -636,7 +685,9 @@ tbody tr:last-child td { border-bottom: none; }
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--color-surface);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--color-border);
   justify-content: space-around;
   padding: 6px 4px;
@@ -688,13 +739,17 @@ tbody tr:last-child td { border-bottom: none; }
 </head>
 <body>
 
+<div class="cosmic-bg" aria-hidden="true">
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+</div>
+
 <!-- ============ LOGIN ============ -->
 <div id="login-screen">
-  <div class="login-bg">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-  </div>
   <div class="login-card">
     <div class="login-logo"><i data-lucide="wallet" class="icon icon-lg"></i></div>
     <h1>Gestão Financeira</h1>
