@@ -1,4 +1,4 @@
-# Luis Otávio Fotografias — Gestão Financeira
+# Gestão Financeira
 
 Sistema financeiro single-file (`index.html`), sem build, usando Supabase como
 backend. Funciona direto no GitHub Pages.
@@ -12,9 +12,12 @@ backend. Funciona direto no GitHub Pages.
    veja/edite os próprios registros.
 
    > Se você já tinha rodado uma versão anterior deste script (sem a tabela
-   > `receitas_recorrentes`), pode rodar o arquivo de novo sem problema — todos
-   > os comandos usam `if not exists` / `drop policy if exists`, então só a
-   > tabela e as políticas novas serão criadas.
+   > `receitas_recorrentes`, sem status em despesas, ou com as categorias
+   > antigas de fotografia), pode rodar o arquivo de novo sem problema — todos
+   > os comandos usam `if not exists` / `drop policy if exists` / `drop
+   > constraint if exists`, então só o que faltar será criado/atualizado. A
+   > migração de categorias antigas para as novas é feita automaticamente
+   > (veja os comentários no próprio `supabase_setup.sql`).
 
 ## 2. Desativar cadastro público
 

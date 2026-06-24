@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Otávio Fotografias — Gestão Financeira</title>
+<title>Gestão Financeira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,15 +12,15 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <style>
 :root {
-  --color-primary: #1e5fbf;
-  --color-primary-dark: #154a94;
-  --color-primary-light: #e8f0fc;
-  --color-accent: #3b82c4;
-  --color-bg: #f7f9fc;
+  --color-primary: #18181b;
+  --color-primary-dark: #000000;
+  --color-primary-light: #f0f0f1;
+  --color-accent: #52525b;
+  --color-bg: #f7f7f8;
   --color-surface: #ffffff;
-  --color-text: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-border: #e2e8f0;
+  --color-text: #18181b;
+  --color-text-muted: #71717a;
+  --color-border: #e4e4e7;
   --color-success: #16a34a;
   --color-success-light: #e7f6ec;
   --color-danger: #dc2626;
@@ -29,10 +29,10 @@
   --color-warning-light: #fef3e2;
   --radius: 8px;
   --radius-lg: 16px;
-  --shadow-sm: 0 1px 3px rgba(16, 38, 73, 0.08);
-  --shadow-md: 0 4px 14px rgba(16, 38, 73, 0.1);
-  --gradient-primary: linear-gradient(135deg, #2569d6 0%, #154a94 100%);
-  --gradient-sidebar: linear-gradient(180deg, #1c5fc4 0%, #0f3a73 100%);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.12);
+  --gradient-primary: linear-gradient(135deg, #3f3f46 0%, #000000 100%);
+  --gradient-sidebar: linear-gradient(180deg, #27272a 0%, #000000 100%);
 }
 
 * { box-sizing: border-box; }
@@ -93,9 +93,9 @@ input, select {
   animation: blobFloat 22s ease-in-out infinite;
   will-change: transform;
 }
-.blob-1 { width: 380px; height: 380px; background: #6fa8e0; top: -120px; left: -100px; }
-.blob-2 { width: 320px; height: 320px; background: #103f7d; bottom: -110px; right: -90px; animation-duration: 26s; animation-delay: -6s; }
-.blob-3 { width: 260px; height: 260px; background: #9cc4ef; top: 45%; left: 62%; animation-duration: 19s; animation-delay: -3s; }
+.blob-1 { width: 380px; height: 380px; background: #6b6b73; top: -120px; left: -100px; }
+.blob-2 { width: 320px; height: 320px; background: #000000; bottom: -110px; right: -90px; animation-duration: 26s; animation-delay: -6s; }
+.blob-3 { width: 260px; height: 260px; background: #c7c7cd; top: 45%; left: 62%; animation-duration: 19s; animation-delay: -3s; }
 
 @keyframes blobFloat {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -106,7 +106,10 @@ input, select {
 .login-card {
   position: relative;
   z-index: 1;
-  background: var(--color-surface);
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.4);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: 40px 36px;
@@ -126,7 +129,7 @@ input, select {
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 8px 20px rgba(21,74,148,.35);
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
 
 @keyframes cardIn {
@@ -233,7 +236,7 @@ input, select {
 .btn-primary {
   background: var(--gradient-primary);
   color: #fff;
-  box-shadow: 0 4px 14px rgba(21,74,148,.3);
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
 }
 .btn-primary:hover:not(:disabled) { filter: brightness(0.94); }
 
@@ -466,6 +469,11 @@ section h2 {
 }
 .card .card-value.positive { color: var(--color-success); }
 .card .card-value.negative { color: var(--color-danger); }
+.card .card-sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
 
 .panel {
   background: var(--color-surface);
@@ -633,7 +641,7 @@ tbody tr:last-child td { border-bottom: none; }
   justify-content: space-around;
   padding: 6px 4px;
   padding-bottom: calc(6px + env(safe-area-inset-bottom));
-  box-shadow: 0 -2px 10px rgba(16,38,73,.08);
+  box-shadow: 0 -2px 10px rgba(0,0,0,.08);
 }
 .nav-btn-mobile {
   flex: 1;
@@ -688,9 +696,9 @@ tbody tr:last-child td { border-bottom: none; }
     <span class="blob blob-3"></span>
   </div>
   <div class="login-card">
-    <div class="login-logo"><i data-lucide="camera" class="icon icon-lg"></i></div>
-    <h1>Luis Otávio Fotografias</h1>
-    <p class="subtitle">Gestão Financeira</p>
+    <div class="login-logo"><i data-lucide="wallet" class="icon icon-lg"></i></div>
+    <h1>Gestão Financeira</h1>
+    <p class="subtitle">Controle suas entradas, saídas e contas</p>
     <div id="login-error" class="alert alert-danger hidden"></div>
     <form id="login-form">
       <div class="field">
@@ -715,7 +723,7 @@ tbody tr:last-child td { border-bottom: none; }
 <!-- ============ APP ============ -->
 <div id="app-screen" class="hidden">
   <header id="mobile-topbar" class="mobile-only">
-    <span class="mobile-brand">Luis Otávio</span>
+    <span class="mobile-brand">Gestão Financeira</span>
     <div class="mobile-topbar-actions">
       <button type="button" class="icon-btn logout-trigger" title="Sair"><i data-lucide="log-out" class="icon"></i></button>
     </div>
@@ -729,10 +737,10 @@ tbody tr:last-child td { border-bottom: none; }
   </nav>
   <nav id="sidebar">
     <div class="brand">
-      <span class="brand-icon"><i data-lucide="camera" class="icon"></i></span>
+      <span class="brand-icon"><i data-lucide="wallet" class="icon"></i></span>
       <div>
-        <h1>Luis Otávio Fotografias</h1>
-        <span>Gestão Financeira</span>
+        <h1>Gestão Financeira</h1>
+        <span>Entradas, saídas e contas</span>
       </div>
     </div>
     <button class="nav-btn nav-item active" data-section="dashboard"><i data-lucide="layout-dashboard" class="icon"></i>Dashboard</button>
@@ -754,24 +762,36 @@ tbody tr:last-child td { border-bottom: none; }
       <h2><i data-lucide="layout-dashboard" class="icon"></i>Dashboard</h2>
       <div class="cards-grid">
         <div class="card">
-          <div class="card-icon"><i data-lucide="wallet" class="icon"></i></div>
-          <div class="card-label">Saldo atual</div>
-          <div class="card-value" id="card-saldo-atual">R$ 0,00</div>
+          <div class="card-icon"><i data-lucide="scale" class="icon"></i></div>
+          <div class="card-label">Saldo do mês</div>
+          <div class="card-value" id="card-saldo-mes">R$ 0,00</div>
         </div>
         <div class="card card-accent-success">
           <div class="card-icon"><i data-lucide="trending-up" class="icon"></i></div>
-          <div class="card-label">Receitas do mês</div>
+          <div class="card-label">Total de entradas</div>
           <div class="card-value" id="card-receitas-mes">R$ 0,00</div>
         </div>
         <div class="card card-accent-danger">
           <div class="card-icon"><i data-lucide="trending-down" class="icon"></i></div>
-          <div class="card-label">Despesas do mês</div>
+          <div class="card-label">Total de saídas</div>
           <div class="card-value" id="card-despesas-mes">R$ 0,00</div>
         </div>
         <div class="card">
-          <div class="card-icon"><i data-lucide="scale" class="icon"></i></div>
-          <div class="card-label">Saldo do mês</div>
-          <div class="card-value" id="card-saldo-mes">R$ 0,00</div>
+          <div class="card-icon"><i data-lucide="wallet" class="icon"></i></div>
+          <div class="card-label">Saldo atual</div>
+          <div class="card-value" id="card-saldo-atual">R$ 0,00</div>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="clock" class="icon"></i></div>
+          <div class="card-label">Contas pendentes</div>
+          <div class="card-value" id="card-contas-pendentes">R$ 0,00</div>
+          <div class="card-sub" id="card-contas-pendentes-qtd">0 contas</div>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="circle-check" class="icon"></i></div>
+          <div class="card-label">Contas pagas</div>
+          <div class="card-value" id="card-contas-pagas">R$ 0,00</div>
+          <div class="card-sub" id="card-contas-pagas-qtd">0 contas</div>
         </div>
       </div>
       <div class="panel">
@@ -797,12 +817,12 @@ tbody tr:last-child td { border-bottom: none; }
               <input type="text" id="receita-cliente">
             </div>
             <div class="field">
-              <label for="receita-tipo">Tipo de serviço</label>
+              <label for="receita-tipo">Categoria</label>
               <select id="receita-tipo" required>
-                <option value="ensaio">Ensaio</option>
-                <option value="casamento">Casamento</option>
-                <option value="evento">Evento</option>
-                <option value="corporativo">Corporativo</option>
+                <option value="salario">Salário</option>
+                <option value="freelance">Freelance</option>
+                <option value="vendas">Vendas</option>
+                <option value="investimento">Investimento</option>
                 <option value="outro">Outro</option>
               </select>
             </div>
@@ -833,13 +853,13 @@ tbody tr:last-child td { border-bottom: none; }
         <h3><i data-lucide="list" class="icon"></i>Receitas registradas</h3>
         <div class="filters">
           <div class="field">
-            <label for="filter-receita-tipo">Tipo</label>
+            <label for="filter-receita-tipo">Categoria</label>
             <select id="filter-receita-tipo">
               <option value="">Todos</option>
-              <option value="ensaio">Ensaio</option>
-              <option value="casamento">Casamento</option>
-              <option value="evento">Evento</option>
-              <option value="corporativo">Corporativo</option>
+              <option value="salario">Salário</option>
+              <option value="freelance">Freelance</option>
+              <option value="vendas">Vendas</option>
+              <option value="investimento">Investimento</option>
               <option value="outro">Outro</option>
             </select>
           </div>
@@ -864,7 +884,7 @@ tbody tr:last-child td { border-bottom: none; }
           <table>
             <thead>
               <tr>
-                <th>Data</th><th>Descrição</th><th>Cliente</th><th>Tipo</th>
+                <th>Data</th><th>Descrição</th><th>Cliente</th><th>Categoria</th>
                 <th>Valor</th><th>Status</th><th>Ações</th>
               </tr>
             </thead>
@@ -891,12 +911,12 @@ tbody tr:last-child td { border-bottom: none; }
               <input type="text" id="recorrente-cliente">
             </div>
             <div class="field">
-              <label for="recorrente-tipo">Tipo de serviço</label>
+              <label for="recorrente-tipo">Categoria</label>
               <select id="recorrente-tipo" required>
-                <option value="ensaio">Ensaio</option>
-                <option value="casamento">Casamento</option>
-                <option value="evento">Evento</option>
-                <option value="corporativo">Corporativo</option>
+                <option value="salario">Salário</option>
+                <option value="freelance">Freelance</option>
+                <option value="vendas">Vendas</option>
+                <option value="investimento">Investimento</option>
                 <option value="outro">Outro</option>
               </select>
             </div>
@@ -930,13 +950,13 @@ tbody tr:last-child td { border-bottom: none; }
         <h3><i data-lucide="list" class="icon"></i>Receitas recorrentes cadastradas</h3>
         <div class="filters">
           <div class="field">
-            <label for="filter-recorrente-tipo">Tipo</label>
+            <label for="filter-recorrente-tipo">Categoria</label>
             <select id="filter-recorrente-tipo">
               <option value="">Todos</option>
-              <option value="ensaio">Ensaio</option>
-              <option value="casamento">Casamento</option>
-              <option value="evento">Evento</option>
-              <option value="corporativo">Corporativo</option>
+              <option value="salario">Salário</option>
+              <option value="freelance">Freelance</option>
+              <option value="vendas">Vendas</option>
+              <option value="investimento">Investimento</option>
               <option value="outro">Outro</option>
             </select>
           </div>
@@ -957,7 +977,7 @@ tbody tr:last-child td { border-bottom: none; }
           <table>
             <thead>
               <tr>
-                <th>Cliente</th><th>Descrição</th><th>Tipo</th><th>Valor mensal</th>
+                <th>Cliente</th><th>Descrição</th><th>Categoria</th><th>Valor mensal</th>
                 <th>Início</th><th>Fidelidade</th><th>Status</th><th>Ações</th>
               </tr>
             </thead>
@@ -982,11 +1002,12 @@ tbody tr:last-child td { border-bottom: none; }
             <div class="field">
               <label for="despesa-categoria">Categoria</label>
               <select id="despesa-categoria" required>
-                <option value="equipamento">Equipamento</option>
-                <option value="software">Software</option>
+                <option value="moradia">Moradia</option>
+                <option value="alimentacao">Alimentação</option>
                 <option value="transporte">Transporte</option>
-                <option value="marketing">Marketing</option>
-                <option value="impostos">Impostos</option>
+                <option value="saude">Saúde</option>
+                <option value="lazer">Lazer</option>
+                <option value="contas_fixas">Contas Fixas</option>
                 <option value="outro">Outro</option>
               </select>
             </div>
@@ -997,6 +1018,13 @@ tbody tr:last-child td { border-bottom: none; }
             <div class="field">
               <label for="despesa-data">Data</label>
               <input type="date" id="despesa-data" required>
+            </div>
+            <div class="field">
+              <label for="despesa-status">Status</label>
+              <select id="despesa-status" required>
+                <option value="pendente">Pendente</option>
+                <option value="pago">Pago</option>
+              </select>
             </div>
           </div>
           <div class="form-actions">
@@ -1013,12 +1041,21 @@ tbody tr:last-child td { border-bottom: none; }
             <label for="filter-despesa-categoria">Categoria</label>
             <select id="filter-despesa-categoria">
               <option value="">Todas</option>
-              <option value="equipamento">Equipamento</option>
-              <option value="software">Software</option>
+              <option value="moradia">Moradia</option>
+              <option value="alimentacao">Alimentação</option>
               <option value="transporte">Transporte</option>
-              <option value="marketing">Marketing</option>
-              <option value="impostos">Impostos</option>
+              <option value="saude">Saúde</option>
+              <option value="lazer">Lazer</option>
+              <option value="contas_fixas">Contas Fixas</option>
               <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="filter-despesa-status">Status</label>
+            <select id="filter-despesa-status">
+              <option value="">Todas</option>
+              <option value="pago">Pago</option>
+              <option value="pendente">Pendente</option>
             </select>
           </div>
           <div class="field">
@@ -1033,7 +1070,7 @@ tbody tr:last-child td { border-bottom: none; }
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th>Ações</th></tr>
+              <tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Valor</th><th>Status</th><th>Ações</th></tr>
             </thead>
             <tbody id="despesas-tbody"></tbody>
           </table>
@@ -1058,7 +1095,7 @@ tbody tr:last-child td { border-bottom: none; }
           <div class="chart-wrap"><canvas id="chart-despesas-categoria"></canvas></div>
         </div>
         <div class="panel">
-          <h3><i data-lucide="target" class="icon"></i>Receitas por tipo de serviço</h3>
+          <h3><i data-lucide="target" class="icon"></i>Receitas por categoria</h3>
           <div class="chart-wrap"><canvas id="chart-receitas-tipo"></canvas></div>
         </div>
       </div>
@@ -1097,12 +1134,12 @@ const state = {
 };
 
 const TIPO_SERVICO_LABELS = {
-  ensaio: 'Ensaio', casamento: 'Casamento', evento: 'Evento',
-  corporativo: 'Corporativo', outro: 'Outro'
+  salario: 'Salário', freelance: 'Freelance', vendas: 'Vendas',
+  investimento: 'Investimento', outro: 'Outro'
 };
 const CATEGORIA_LABELS = {
-  equipamento: 'Equipamento', software: 'Software', transporte: 'Transporte',
-  marketing: 'Marketing', impostos: 'Impostos', outro: 'Outro'
+  moradia: 'Moradia', alimentacao: 'Alimentação', transporte: 'Transporte',
+  saude: 'Saúde', lazer: 'Lazer', contas_fixas: 'Contas Fixas', outro: 'Outro'
 };
 
 /* =========================================================================
@@ -1388,8 +1425,15 @@ function computeDashboardMetrics() {
   const saldoAtual = sumValor(state.receitas.filter(r => r.status === 'pago')) - sumValor(state.despesas);
   const currentMonthKey = getCurrentMonthKey();
   const receitasMes = sumValor(state.receitas.filter(r => getMonthKey(r.data) === currentMonthKey));
-  const despesasMes = sumValor(state.despesas.filter(d => getMonthKey(d.data) === currentMonthKey));
-  return { saldoAtual, receitasMes, despesasMes, saldoMes: receitasMes - despesasMes };
+  const despesasMesTodas = state.despesas.filter(d => getMonthKey(d.data) === currentMonthKey);
+  const despesasMes = sumValor(despesasMesTodas);
+  const despesasPendentesMes = despesasMesTodas.filter(d => d.status === 'pendente');
+  const despesasPagasMes = despesasMesTodas.filter(d => d.status === 'pago');
+  return {
+    saldoAtual, receitasMes, despesasMes, saldoMes: receitasMes - despesasMes,
+    contasPendentes: { valor: sumValor(despesasPendentesMes), qtd: despesasPendentesMes.length },
+    contasPagas: { valor: sumValor(despesasPagasMes), qtd: despesasPagasMes.length }
+  };
 }
 
 function renderDashboardCards() {
@@ -1406,6 +1450,12 @@ function renderDashboardCards() {
   setCard('card-receitas-mes', m.receitasMes);
   setCard('card-despesas-mes', m.despesasMes);
   setCard('card-saldo-mes', m.saldoMes);
+  setCard('card-contas-pendentes', m.contasPendentes.valor);
+  setCard('card-contas-pagas', m.contasPagas.valor);
+  document.getElementById('card-contas-pendentes-qtd').textContent =
+    `${m.contasPendentes.qtd} conta${m.contasPendentes.qtd === 1 ? '' : 's'}`;
+  document.getElementById('card-contas-pagas-qtd').textContent =
+    `${m.contasPagas.qtd} conta${m.contasPagas.qtd === 1 ? '' : 's'}`;
 }
 
 function buildMonthlySeries(monthsBack) {
@@ -1464,6 +1514,8 @@ function getFilteredReceitas() {
 function rowHtmlReceita(r) {
   const badgeClass = r.status === 'pago' ? 'badge-success' : 'badge-warning';
   const badgeLabel = r.status === 'pago' ? 'Pago' : 'Pendente';
+  const toggleIcon = r.status === 'pago' ? 'rotate-ccw' : 'check';
+  const toggleLabel = r.status === 'pago' ? 'Marcar pendente' : 'Marcar pago';
   return `<tr>
     <td>${formatDateBR(r.data)}</td>
     <td>${escapeHtml(r.descricao)}</td>
@@ -1473,6 +1525,7 @@ function rowHtmlReceita(r) {
     <td><span class="badge ${badgeClass}">${badgeLabel}</span></td>
     <td class="row-actions">
       <button class="edit-btn" data-action="edit" data-id="${r.id}"><i data-lucide="pencil" class="icon icon-sm"></i>Editar</button>
+      <button class="toggle-btn" data-action="toggle" data-id="${r.id}"><i data-lucide="${toggleIcon}" class="icon icon-sm"></i>${toggleLabel}</button>
       <button class="delete-btn" data-action="delete" data-id="${r.id}"><i data-lucide="trash-2" class="icon icon-sm"></i>Excluir</button>
     </td>
   </tr>`;
@@ -1561,6 +1614,22 @@ async function handleDeleteReceita(id) {
   }
 }
 
+async function handleToggleStatusReceita(id) {
+  const r = state.receitas.find(item => item.id === id);
+  if (!r) return;
+  const novoStatus = r.status === 'pago' ? 'pendente' : 'pago';
+  try {
+    await updateRow('receitas', id, { status: novoStatus });
+    await loadAllData();
+    renderReceitasTable();
+    renderDashboard();
+    playSoundClick();
+  } catch (err) {
+    showAlert('Erro ao atualizar status da receita: ' + err.message);
+    playSoundError();
+  }
+}
+
 function wireReceitasModule() {
   document.getElementById('receita-form').addEventListener('submit', handleReceitaFormSubmit);
   document.getElementById('receita-cancel-btn').addEventListener('click', resetReceitaForm);
@@ -1569,6 +1638,7 @@ function wireReceitasModule() {
     if (!btn) return;
     const id = btn.dataset.id;
     if (btn.dataset.action === 'edit') startEditReceita(id);
+    if (btn.dataset.action === 'toggle') handleToggleStatusReceita(id);
     if (btn.dataset.action === 'delete') handleDeleteReceita(id);
   });
   ['filter-receita-tipo', 'filter-receita-status', 'filter-receita-mes', 'filter-receita-busca'].forEach(id => {
@@ -1581,11 +1651,13 @@ function wireReceitasModule() {
    ========================================================================= */
 function getFilteredDespesas() {
   const categoria = document.getElementById('filter-despesa-categoria').value;
+  const status = document.getElementById('filter-despesa-status').value;
   const mes = document.getElementById('filter-despesa-mes').value;
   const busca = document.getElementById('filter-despesa-busca').value.trim().toLowerCase();
 
   return state.despesas.filter(d => {
     if (categoria && d.categoria !== categoria) return false;
+    if (status && d.status !== status) return false;
     if (mes && getMonthKey(d.data) !== mes) return false;
     if (busca && !(d.descricao || '').toLowerCase().includes(busca)) return false;
     return true;
@@ -1593,13 +1665,19 @@ function getFilteredDespesas() {
 }
 
 function rowHtmlDespesa(d) {
+  const badgeClass = d.status === 'pago' ? 'badge-success' : 'badge-warning';
+  const badgeLabel = d.status === 'pago' ? 'Pago' : 'Pendente';
+  const toggleIcon = d.status === 'pago' ? 'rotate-ccw' : 'check';
+  const toggleLabel = d.status === 'pago' ? 'Marcar pendente' : 'Marcar pago';
   return `<tr>
     <td>${formatDateBR(d.data)}</td>
     <td>${escapeHtml(d.descricao)}</td>
     <td>${CATEGORIA_LABELS[d.categoria] || d.categoria}</td>
     <td>${formatCurrencyBRL(d.valor)}</td>
+    <td><span class="badge ${badgeClass}">${badgeLabel}</span></td>
     <td class="row-actions">
       <button class="edit-btn" data-action="edit" data-id="${d.id}"><i data-lucide="pencil" class="icon icon-sm"></i>Editar</button>
+      <button class="toggle-btn" data-action="toggle" data-id="${d.id}"><i data-lucide="${toggleIcon}" class="icon icon-sm"></i>${toggleLabel}</button>
       <button class="delete-btn" data-action="delete" data-id="${d.id}"><i data-lucide="trash-2" class="icon icon-sm"></i>Excluir</button>
     </td>
   </tr>`;
@@ -1610,13 +1688,14 @@ function renderDespesasTable() {
   const tbody = document.getElementById('despesas-tbody');
   tbody.innerHTML = list.length
     ? list.map(rowHtmlDespesa).join('')
-    : '<tr class="empty-row"><td colspan="5">Nenhuma despesa encontrada.</td></tr>';
+    : '<tr class="empty-row"><td colspan="6">Nenhuma despesa encontrada.</td></tr>';
   lucide.createIcons();
 }
 
 function resetDespesaForm() {
   document.getElementById('despesa-form').reset();
   document.getElementById('despesa-id').value = '';
+  document.getElementById('despesa-status').value = 'pendente';
   state.editingDespesaId = null;
   document.getElementById('despesa-form-title').textContent = 'Nova despesa';
   document.getElementById('despesa-submit-btn').textContent = 'Adicionar';
@@ -1631,6 +1710,7 @@ function startEditDespesa(id) {
   document.getElementById('despesa-categoria').value = d.categoria;
   document.getElementById('despesa-valor').value = d.valor;
   document.getElementById('despesa-data').value = d.data;
+  document.getElementById('despesa-status').value = d.status;
   state.editingDespesaId = id;
   document.getElementById('despesa-form-title').textContent = 'Editar despesa';
   document.getElementById('despesa-submit-btn').textContent = 'Salvar alterações';
@@ -1644,7 +1724,8 @@ async function handleDespesaFormSubmit(e) {
     descricao: document.getElementById('despesa-descricao').value.trim(),
     categoria: document.getElementById('despesa-categoria').value,
     valor: parseFloat(document.getElementById('despesa-valor').value),
-    data: document.getElementById('despesa-data').value
+    data: document.getElementById('despesa-data').value,
+    status: document.getElementById('despesa-status').value
   };
   const btn = document.getElementById('despesa-submit-btn');
   setButtonLoading(btn, true);
@@ -1683,6 +1764,22 @@ async function handleDeleteDespesa(id) {
   }
 }
 
+async function handleToggleStatusDespesa(id) {
+  const d = state.despesas.find(item => item.id === id);
+  if (!d) return;
+  const novoStatus = d.status === 'pago' ? 'pendente' : 'pago';
+  try {
+    await updateRow('despesas', id, { status: novoStatus });
+    await loadAllData();
+    renderDespesasTable();
+    renderDashboard();
+    playSoundClick();
+  } catch (err) {
+    showAlert('Erro ao atualizar status da despesa: ' + err.message);
+    playSoundError();
+  }
+}
+
 function wireDespesasModule() {
   document.getElementById('despesa-form').addEventListener('submit', handleDespesaFormSubmit);
   document.getElementById('despesa-cancel-btn').addEventListener('click', resetDespesaForm);
@@ -1691,9 +1788,10 @@ function wireDespesasModule() {
     if (!btn) return;
     const id = btn.dataset.id;
     if (btn.dataset.action === 'edit') startEditDespesa(id);
+    if (btn.dataset.action === 'toggle') handleToggleStatusDespesa(id);
     if (btn.dataset.action === 'delete') handleDeleteDespesa(id);
   });
-  ['filter-despesa-categoria', 'filter-despesa-mes', 'filter-despesa-busca'].forEach(id => {
+  ['filter-despesa-categoria', 'filter-despesa-status', 'filter-despesa-mes', 'filter-despesa-busca'].forEach(id => {
     document.getElementById(id).addEventListener('input', renderDespesasTable);
   });
 }
@@ -1931,9 +2029,9 @@ function wireRelatoriosModule() {
 /* =========================================================================
    12. CHART HELPERS
    ========================================================================= */
-const CHART_COLOR_RECEITA = '#1e5fbf';
+const CHART_COLOR_RECEITA = '#16a34a';
 const CHART_COLOR_DESPESA = '#dc2626';
-const CATEGORY_PALETTE = ['#1e5fbf', '#3b82c4', '#7badd9', '#154a94', '#9fb8d9', '#5b7fa6'];
+const CATEGORY_PALETTE = ['#18181b', '#3f3f46', '#71717a', '#a1a1aa', '#d4d4d8', '#52525b'];
 
 function upsertChart(key, type, canvas, data) {
   if (state.charts[key]) state.charts[key].destroy();
